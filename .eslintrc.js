@@ -1,7 +1,9 @@
 "use strict";
 
-var jsRules = {
-	"array-bracket-newline": "error",
+/* eslint-disable dot-notation */
+/* eslint-disable quote-props */
+const jsRules = {
+	"array-bracket-newline": ["error", "consistent"],
 	"array-bracket-spacing": "error",
 	"array-element-newline": ["error", "consistent"],
 	"arrow-body-style": "error",
@@ -20,7 +22,9 @@ var jsRules = {
 	"dot-location": ["error", "property"],
 	"dot-notation": "error",
 	"eol-last": "error",
-	"eqeqeq": ["error", "always", { null: "ignore" }],
+	"eqeqeq": ["error", "always", {
+		null: "ignore",
+	}],
 	"function-call-argument-newline": ["error", "consistent"],
 	"func-call-spacing": "error",
 	"function-paren-newline": ["error", "consistent"],
@@ -34,7 +38,9 @@ var jsRules = {
 	"key-spacing": "error",
 	"keyword-spacing": "error",
 	"linebreak-style": "error",
-	"max-len": ["error", { code: 100 }],
+	"max-len": ["error", {
+		code: 100,
+	}],
 	"multiline-ternary": ["error", "always-multiline"],
 	"new-parens": "error",
 	"no-alert": "error",
@@ -68,13 +74,20 @@ var jsRules = {
 	"no-implied-eval": "error",
 	"no-import-assign": "error",
 	"no-invalid-this": "error",
-	"no-irregular-whitespace": ["error", { skipStrings: false }],
+	"no-irregular-whitespace": ["error", {
+		skipStrings: false,
+	}],
 	"no-iterator": "error",
 	"no-label-var": "error",
-	"no-labels": ["error", { allowLoop: true, allowSwitch: true }],
+	"no-labels": ["error", {
+		allowLoop: true,
+		allowSwitch: true,
+	}],
 	"no-lone-blocks": "error",
 	"no-multi-assign": "error",
-	"no-multi-spaces": ["error", { ignoreEOLComments: true }],
+	"no-multi-spaces": ["error", {
+		ignoreEOLComments: true,
+	}],
 	"no-multi-str": "error",
 	"no-multiple-empty-lines": "error",
 	"no-new": "error",
@@ -97,7 +110,9 @@ var jsRules = {
 	"no-trailing-spaces": "error",
 	"no-undef": "off", // Typescript
 	"no-unreachable": "off", // Typescript
-	"no-unsafe-negation": ["off", { enforceForOrderingRelations: true }],
+	"no-unsafe-negation": ["off", {
+		enforceForOrderingRelations: true,
+	}],
 	"no-unused-expressions": "error",
 	"no-unused-vars": "off", // Typescript
 	"no-useless-call": "error",
@@ -140,10 +155,12 @@ var jsRules = {
 	"valid-typeof": "off", // Typescript
 	"wrap-iife": "error",
 	"yield-star-spacing": "error",
-	"yoda": ["error", "never", { exceptRange: true }],
+	"yoda": ["error", "never", {
+		exceptRange: true,
+	}],
 };
 
-var tsRules = {
+const tsRules = {
 	// Rules covered by typescript compiler
 	"no-class-assign": "off",
 	"no-const-assign": "off",
@@ -265,6 +282,9 @@ var tsRules = {
 
 module.exports = {
 	root: true,
+	parserOptions: {
+		ecmaVersion: 2018,
+	},
 	rules: jsRules,
 	overrides: [
 		{
