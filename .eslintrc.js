@@ -212,7 +212,11 @@ var tsRules = {
 	}],
 	"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 	"@typescript-eslint/explicit-function-return-type": "off",
-	"@typescript-eslint/explicit-member-accessibility": "error",
+	"@typescript-eslint/explicit-member-accessibility": ["error", {
+		overrides: {
+			constructors: "no-public",
+		},
+	}],
 	"@typescript-eslint/explicit-module-boundary-types": "off",
 	"@typescript-eslint/method-signature-style": "error",
 	"@typescript-eslint/no-base-to-string": "error",
