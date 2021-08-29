@@ -280,6 +280,13 @@ const tsRules = {
 	"@typescript-eslint/switch-exhaustiveness-check": "error",
 };
 
+const jsxRules = {
+	"max-len": ["error", {
+		code: 120,
+		tabWidth: 2,
+	}],
+};
+
 module.exports = {
 	root: true,
 	parserOptions: {
@@ -292,6 +299,10 @@ module.exports = {
 			plugins: ["@typescript-eslint"],
 			parser: "@typescript-eslint/parser",
 			rules: tsRules,
+		},
+		{
+			files: ["*.jsx", "*.tsx"],
+			rules: jsxRules,
 		},
 	],
 };
